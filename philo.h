@@ -6,7 +6,7 @@
 /*   By: agorski <agorski@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 19:36:56 by agorski           #+#    #+#             */
-/*   Updated: 2024/12/27 23:20:29 by agorski          ###   ########.fr       */
+/*   Updated: 2024/12/28 17:12:41 by agorski          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,11 @@
 
 // philosofer main functions
 
-int	ft_init_args(int argc, char **argv, t_table *table);
+int	ft_parse_args(int argc, char **argv, t_table *table);
+
+// tools
+
+long	ft_get_time(void);
+void	e_q(char *str);
 
 #endif

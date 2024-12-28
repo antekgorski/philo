@@ -6,12 +6,12 @@
 #    By: agorski <agorski@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/27 22:51:40 by agorski           #+#    #+#              #
-#    Updated: 2024/12/27 23:09:05 by agorski          ###   ########.fr        #
+#    Updated: 2024/12/28 17:14:49 by agorski          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = philo
-SRCS = check_imput.c main.c
+SRCS = check_imput.c main.c tools.c
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror -I.
 TESTFLAGS = -g
