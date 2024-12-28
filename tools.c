@@ -6,7 +6,7 @@
 /*   By: agorski <agorski@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 21:15:07 by agorski           #+#    #+#             */
-/*   Updated: 2024/12/28 17:14:20 by agorski          ###   ########.fr       */
+/*   Updated: 2024/12/28 23:55:44 by agorski          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,31 @@ long	ft_get_time(void)
 	struct timeval	time;
 
 	gettimeofday(&time, NULL);
-	return ((long long)time.tv_sec * 1000 + (long long)time.tv_usec / 1000);
+	return ((long)time.tv_sec * 1000 + (long)time.tv_usec / 1000);
+}
+
+/**
+ * @brief Free the memory allocated for the forks, head, and philosophers
+ * @param table the table
+ * @param philo_head the philosophers
+ */
+void	ft_free(t_table *table, t_philo_head *philo_head)
+{
+	int	i;
+
+	i = 0;
+	if (table->philo != NULL)
+	{
+		while (i < table->philo_n)
+		{
+			pthread_mutex_destroy(&table->forks[i]);
+			i++;
+		}
+	}
+	if (table->forks != NULL)
+		free(table->forks);
+	if (table->philo != NULL)
+		free(table->philo);
+	if (philo_head != NULL)
+		free(philo_head);
 }

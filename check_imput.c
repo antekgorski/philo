@@ -6,7 +6,7 @@
 /*   By: agorski <agorski@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 21:13:33 by agorski           #+#    #+#             */
-/*   Updated: 2024/12/28 17:12:52 by agorski          ###   ########.fr       */
+/*   Updated: 2024/12/28 17:54:53 by agorski          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,5 +70,7 @@ int	ft_parse_args(int argc, char **argv, t_table *table)
 			table->number_of_meals = ft_atoi(argv[argc - 1]);
 		argc--;
 	}
+	if (argc == 5)
+		table->number_of_meals = -1;
 	return (0);
 }

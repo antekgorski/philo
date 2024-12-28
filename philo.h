@@ -6,7 +6,7 @@
 /*   By: agorski <agorski@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 19:36:56 by agorski           #+#    #+#             */
-/*   Updated: 2024/12/28 17:12:41 by agorski          ###   ########.fr       */
+/*   Updated: 2024/12/28 23:48:36 by agorski          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,28 @@
 // my includes
 # include "structs.h"
 
-// philosofer main functions
+// main functions
 
-int	ft_parse_args(int argc, char **argv, t_table *table);
+int		ft_parse_args(int argc, char **argv, t_table *table);
+void	ft_table_setting(t_table *table);
+void	ft_philo_come(t_table *table, t_philo_head **philo_head);
+void	ft_philo_out(t_table *table);
+void	ft_dinner(t_table *table, t_philo_head *philo_head);
+void	ft_philo_head_init(t_philo_head *philo_head, t_table *table);
+void	*ft_philo(void *arg);
+
+// philo_needs
+
+void	ft_take_forks(t_philo_head *philo);
+void	ft_drop_forks(t_philo_head *philo);
+void	ft_eat(t_philo_head *philo);
+void	ft_sleep(t_philo_head *philo);
+void	ft_think(t_philo_head *philo);
 
 // tools
 
 long	ft_get_time(void);
 void	e_q(char *str);
+void	ft_free(t_table *table, t_philo_head *philo_head);
 
 #endif

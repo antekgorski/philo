@@ -6,15 +6,15 @@
 #    By: agorski <agorski@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/27 22:51:40 by agorski           #+#    #+#              #
-#    Updated: 2024/12/28 17:14:49 by agorski          ###   ########.fr        #
+#    Updated: 2024/12/29 00:02:51 by agorski          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = philo
-SRCS = check_imput.c main.c tools.c
+SRCS = check_imput.c incidents.c main.c philo_needs.c philosofers.c tools.c
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror -I.
-TESTFLAGS = -g
+TESTFLAGS = -g #-fsanitize=address
 
 all: $(NAME)
 
