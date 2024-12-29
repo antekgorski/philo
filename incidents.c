@@ -6,7 +6,7 @@
 /*   By: agorski <agorski@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/28 21:30:13 by agorski           #+#    #+#             */
-/*   Updated: 2024/12/28 23:47:19 by agorski          ###   ########.fr       */
+/*   Updated: 2024/12/29 01:21:02 by agorski          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,12 @@ void	ft_philo_come(t_table *table, t_philo_head **philo_head)
 {
 	int	i;
 
-	ft_philo_head_init(*philo_head, table);
 	i = 0;
+	table->start_time = ft_get_time();
 	while (i < table->philo_n)
 	{
-		if (pthread_create(&table->philo[i], NULL, ft_philo, philo_head) != 0)
+		if (pthread_create(&table->philo[i], NULL, &ft_philo,
+				(void *)&philo_head[i]) != 0)
 			e_q("Error: pthread_create failed\n");
 		i++;
 	}
