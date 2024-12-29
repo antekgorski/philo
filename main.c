@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: agorski <agorski@student.42.fr>            +#+  +:+       +#+        */
+/*   By: agorski <agorski@student.42warsaw.pl>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 19:54:40 by agorski           #+#    #+#             */
-/*   Updated: 2024/12/29 00:57:26 by agorski          ###   ########.fr       */
+/*   Updated: 2024/12/29 23:01:39 by agorski          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ int	ft_philo_died(t_table *table, t_philo_head **philo_head)
 	i = 0;
 	while (i < table->philo_n)
 	{
-		if (ft_get_time() - philo_head[i]->lm_time > table->time_to_die)
+		if ((ft_get_time() - philo_head[i]->lm_time) > table->time_to_die)
 		{
 			printf("%ld %d died\n", ft_get_time(), i + 1);
 			return (1);
