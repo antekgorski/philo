@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   philosofers.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: agorski <agorski@student.42.fr>            +#+  +:+       +#+        */
+/*   By: agorski <agorski@student.42warsaw.pl>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/28 21:33:59 by agorski           #+#    #+#             */
-/*   Updated: 2024/12/29 01:21:34 by agorski          ###   ########.fr       */
+/*   Updated: 2024/12/29 10:22:39 by agorski          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	*ft_philo(void *arg)
 	t_philo_head	*philo;
 
 	philo = (t_philo_head *)arg;
-	while (philo->table->philo_died != 1 || philo->table->meal_eaten != 1)
+	while (philo->table->philo_died != 1 && philo->table->meal_eaten != 1)
 	{
 		ft_take_forks(philo);
 		ft_eat(philo);
@@ -46,4 +46,52 @@ void	*ft_philo(void *arg)
 		ft_think(philo);
 	}
 	return (NULL);
+}
+
+void	ft_philo_come(t_table *table, t_philo_head **philo_head)
+{
+	int	i;
+
+	i = 0;
+	table->start_time = ft_get_time();
+	while (i < table->philo_n)
+	{
+		if (pthread_create(&table->philo[i], NULL, &ft_philo,
+				(void *)philo_head[i]) != 0)
+			e_q("Error: pthread_create failed\n");
+		i++;
+	}
+}
+
+void	ft_philo_out(t_table *table)
+{
+	int	i;
+
+	i = 0;
+	while (i < table->philo_n)
+	{
+		if (pthread_join(table->philo[i], NULL) != 0)
+			e_q("Error: pthread_join failed\n");
+		i++;
+	}
+}
+
+void	ft_table_setting(t_table *table)
+{
+	int	i;
+
+	i = 0;
+	table->start_time = ft_get_time();
+	table->forks = (t_mutex *)malloc(sizeof(t_mutex) * table->philo_n);
+	if (!table->forks)
+		e_q("Error: malloc failed\n");
+	table->philo = (pthread_t *)malloc(sizeof(pthread_t) * table->philo_n);
+	if (!table->philo)
+		e_q("Error: malloc failed\n");
+	while ((i < table->philo_n))
+	{
+		if (pthread_mutex_init(&table->forks[i], NULL) != 0)
+			e_q("Error: mutex init failed\n");
+		i++;
+	}
 }
