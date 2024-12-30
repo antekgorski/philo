@@ -12,21 +12,6 @@
 
 #include "philo.h"
 
-void	ft_init_struct(t_table *table, t_philo_head **philo_head)
-{
-	table->philo_n = 0;
-	table->time_to_die = 0;
-	table->time_to_eat = 0;
-	table->time_to_sleep = 0;
-	table->number_of_meals = 0;
-	table->start_time = 0;
-	table->philo_died = 0;
-	table->meal_eaten = 0;
-	table->forks = NULL;
-	table->philo = NULL;
-	*philo_head = NULL;
-}
-
 int	ft_meals_eaten(t_table *table, t_philo_head **philo_head)
 {
 	int	i;

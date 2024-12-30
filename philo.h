@@ -34,6 +34,7 @@ void	ft_philo_out(t_table *table);
 void	ft_dinner(t_table *table, t_philo_head **philo_head);
 void	ft_philo_head_init(t_philo_head **philo_head, t_table *table);
 void	*ft_philo(void *arg);
+void	ft_init_struct(t_table *table, t_philo_head **philo_head);
 
 // philo_needs
 
