@@ -11,7 +11,7 @@
 # **************************************************************************** #
 
 NAME = philo
-SRCS = check_imput.c main.c philo_needs.c philosofers.c tools.c
+SRCS = check_imput.c main.c philo_needs.c philosofers.c tools.c init.c
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror -I.
 TESTFLAGS = -g -pthread #-fsanitize=address
