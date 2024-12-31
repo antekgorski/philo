@@ -6,7 +6,7 @@
 #    By: agorski <agorski@student.42warsaw.pl>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/27 22:51:40 by agorski           #+#    #+#              #
-#    Updated: 2024/12/29 23:02:24 by agorski          ###   ########.fr        #
+#    Updated: 2024/12/31 14:56:54 by agorski          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = philo
 SRCS = check_imput.c main.c philo_needs.c philosofers.c tools.c init.c
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror -I.
-TESTFLAGS = -g -pthread #-fsanitize=address
+TESTFLAGS = -g -pthread #-fsanitize=address -fsanitize=thread
 
 all: $(NAME)
 
