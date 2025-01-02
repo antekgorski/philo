@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   philosofers.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: agorski <agorski@student.42.fr>            +#+  +:+       +#+        */
+/*   By: agorski <agorski@student.42warsaw.pl>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/28 21:33:59 by agorski           #+#    #+#             */
-/*   Updated: 2025/01/02 20:52:41 by agorski          ###   ########.fr       */
+/*   Updated: 2025/01/03 00:58:03 by agorski          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,15 +19,10 @@ void	*ft_philo(void *arg)
 	philo = (t_philo_head *)arg;
 	while (philo->table->philo_died != 1 && philo->table->meal_eaten != 1)
 	{
-		if (philo->table->philo_died != 1 || philo->table->meal_eaten != 1)
 			ft_take_forks(philo);
-		if (philo->table->philo_died != 1 || philo->table->meal_eaten != 1)
 			ft_eat(philo);
-		if (philo->table->philo_died != 1 || philo->table->meal_eaten != 1)
 			ft_drop_forks(philo);
-		if (philo->table->philo_died != 1 || philo->table->meal_eaten != 1)
 			ft_sleep(philo);
-		if (philo->table->philo_died != 1 || philo->table->meal_eaten != 1)
 			ft_think(philo);
 	}
 	return (NULL);
