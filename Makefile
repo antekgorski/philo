@@ -3,15 +3,15 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: agorski <agorski@student.42warsaw.pl>      +#+  +:+       +#+         #
+#    By: agorski <agorski@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/27 22:51:40 by agorski           #+#    #+#              #
-#    Updated: 2024/12/31 16:48:34 by agorski          ###   ########.fr        #
+#    Updated: 2025/01/02 10:15:30 by agorski          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = philo
-SRCS = check_imput.c main.c philo_needs.c philosofers.c tools.c init.c
+SRCS = check_imput.c main.c philo_needs.c philosofers.c tools.c init.c monitor.c
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror -I.
 TESTFLAGS = -g -pthread #-fsanitize=address -fsanitize=thread
