@@ -6,7 +6,7 @@
 /*   By: agorski <agorski@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 22:44:07 by agorski           #+#    #+#             */
-/*   Updated: 2024/12/28 23:39:49 by agorski          ###   ########.fr       */
+/*   Updated: 2025/01/02 18:30:56 by agorski          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 
 // typedefs
 typedef pthread_mutex_t	t_mutex;
+typedef struct s_philo_head	t_philo_head;
 
 /**
  * @brief Structure for the table
@@ -40,8 +41,7 @@ typedef struct s_table
 	int					philo_died;
 	int					meal_eaten;
 	t_mutex				*forks;
-	pthread_t			*philo;
-
+	t_philo_head		*philo_head;
 }						t_table;
 
 /**
@@ -58,6 +58,7 @@ typedef struct s_philo_head
 	int					id;
 	int					meals_c;
 	long				lm_time;
+	pthread_t			thread_id;
 	t_mutex				*l_fork;
 	t_mutex				*r_fork;
 	t_table				*table;

@@ -6,7 +6,7 @@
 /*   By: agorski <agorski@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 21:15:07 by agorski           #+#    #+#             */
-/*   Updated: 2024/12/28 23:55:44 by agorski          ###   ########.fr       */
+/*   Updated: 2025/01/02 18:21:04 by agorski          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	ft_free(t_table *table, t_philo_head *philo_head)
 	int	i;
 
 	i = 0;
-	if (table->philo != NULL)
+	if (table->forks != NULL)
 	{
 		while (i < table->philo_n)
 		{
@@ -57,8 +57,6 @@ void	ft_free(t_table *table, t_philo_head *philo_head)
 	}
 	if (table->forks != NULL)
 		free(table->forks);
-	if (table->philo != NULL)
-		free(table->philo);
 	if (philo_head != NULL)
 		free(philo_head);
 }
