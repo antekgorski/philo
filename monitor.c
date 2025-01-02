@@ -6,7 +6,7 @@
 /*   By: agorski <agorski@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 10:13:45 by agorski           #+#    #+#             */
-/*   Updated: 2025/01/02 10:14:45 by agorski          ###   ########.fr       */
+/*   Updated: 2025/01/02 20:54:27 by agorski          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int	ft_philo_died(t_table *table, t_philo_head **philo_head)
 	i = 0;
 	while (i < table->philo_n)
 	{
-		if ((ft_get_time() - philo_head[i]->lm_time) > table->time_to_die)
+		if (((ft_get_time() - (*philo_head)[i].lm_time)) > table->time_to_die)
 		{
 			printf("%ld %d died\n", ft_get_time(), i + 1);
 			return (1);
@@ -53,16 +53,21 @@ void	ft_dinner(t_table *table, t_philo_head **philo_head)
 	{
 		if (table->number_of_meals != -1)
 		{
+			pthread_mutex_lock(&table->diner);
 			if (ft_meals_eaten(table, philo_head) == 1)
 			{
 				table->meal_eaten = 1;
 				break ;
 			}
+			pthread_mutex_unlock(&table->diner);
 		}
+		pthread_mutex_lock(&table->diner);
 		if (ft_philo_died(table, philo_head) == 1)
 		{
 			table->philo_died = 1;
 			break ;
 		}
+		pthread_mutex_unlock(&table->diner);
 	}
+	pthread_mutex_unlock(&table->diner);
 }

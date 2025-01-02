@@ -6,7 +6,7 @@
 /*   By: agorski <agorski@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 21:15:07 by agorski           #+#    #+#             */
-/*   Updated: 2024/12/28 23:55:44 by agorski          ###   ########.fr       */
+/*   Updated: 2025/01/02 20:28:55 by agorski          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ void	ft_free(t_table *table, t_philo_head *philo_head)
 			i++;
 		}
 	}
+	pthread_mutex_destroy(&table->diner);
 	if (table->forks != NULL)
 		free(table->forks);
 	if (table->philo != NULL)

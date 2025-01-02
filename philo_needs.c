@@ -6,7 +6,7 @@
 /*   By: agorski <agorski@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/28 19:01:13 by agorski           #+#    #+#             */
-/*   Updated: 2024/12/28 23:58:58 by agorski          ###   ########.fr       */
+/*   Updated: 2025/01/02 20:23:57 by agorski          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,9 +49,11 @@ void	ft_eat(t_philo_head *philo)
 {
 	printf("%ld %d is eating\n", ft_get_time(), philo->id + 1);
 	usleep(philo->table->time_to_eat * 1000);
+	pthread_mutex_lock(&philo->table->diner);
 	if (philo->table->number_of_meals != -1)
 		philo->meals_c++;
 	philo->lm_time = ft_get_time();
+	pthread_mutex_unlock(&philo->table->diner);
 }
 
 void	ft_sleep(t_philo_head *philo)

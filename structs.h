@@ -6,7 +6,7 @@
 /*   By: agorski <agorski@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 22:44:07 by agorski           #+#    #+#             */
-/*   Updated: 2024/12/28 23:39:49 by agorski          ###   ########.fr       */
+/*   Updated: 2025/01/02 20:22:57 by agorski          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ typedef struct s_table
 	int					philo_died;
 	int					meal_eaten;
 	t_mutex				*forks;
+	t_mutex				diner;
 	pthread_t			*philo;
 
 }						t_table;
