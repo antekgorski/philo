@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   structs.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: agorski <agorski@student.42warsaw.pl>      +#+  +:+       +#+        */
+/*   By: agorski <agorski@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 22:44:07 by agorski           #+#    #+#             */
-/*   Updated: 2025/01/03 11:10:28 by agorski          ###   ########.fr       */
+/*   Updated: 2025/01/03 21:14:19 by agorski          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,14 +32,15 @@ typedef pthread_mutex_t	t_mutex;
 typedef struct s_table
 {
 	int					philo_n;
-	int					time_to_die;
-	int					time_to_eat;
-	int					time_to_sleep;
+	long				time_to_die;
+	long				time_to_eat;
+	long				time_to_sleep;
 	int					number_of_meals;
 	long				start_time;
-	int					philo_died;
+	bool				end;
 	t_mutex				*forks;
-	t_mutex				diner;
+	t_mutex				print;
+	t_mutex				waiter;
 	pthread_t			*philo;
 
 }						t_table;
