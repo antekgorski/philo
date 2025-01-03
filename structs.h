@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   structs.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: agorski <agorski@student.42.fr>            +#+  +:+       +#+        */
+/*   By: agorski <agorski@student.42warsaw.pl>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 22:44:07 by agorski           #+#    #+#             */
-/*   Updated: 2025/01/02 20:22:57 by agorski          ###   ########.fr       */
+/*   Updated: 2025/01/03 11:10:28 by agorski          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ typedef struct s_table
 	int					number_of_meals;
 	long				start_time;
 	int					philo_died;
-	int					meal_eaten;
 	t_mutex				*forks;
 	t_mutex				diner;
 	pthread_t			*philo;

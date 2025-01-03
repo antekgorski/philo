@@ -6,7 +6,7 @@
 /*   By: agorski <agorski@student.42warsaw.pl>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 21:15:07 by agorski           #+#    #+#             */
-/*   Updated: 2025/01/03 10:50:48 by agorski          ###   ########.fr       */
+/*   Updated: 2025/01/03 11:08:27 by agorski          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,22 @@ long	ft_get_time(void)
 long	ft_ts(t_table *table)
 {
 	return (ft_get_time() - table->start_time);
+}
+
+/**
+ * @brief Check if all the philosophers have eaten the required number of meals
+ * @param table the table
+ * @param philo_head the philosophers
+ * @return int 1 if all the philosophers have eaten the required number of meals, 0 otherwise
+ */
+int	ft_full(t_philo_head *philo)
+{
+	if (philo->table->number_of_meals != -1)
+	{
+		if (philo->meals_c == philo->table->number_of_meals)
+			return (1);
+	}
+	return (0);
 }
 
 /**

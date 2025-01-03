@@ -25,7 +25,6 @@ void	ft_init_struct(t_table *table, t_philo_head **philo_head)
 	table->number_of_meals = 0;
 	table->start_time = 0;
 	table->philo_died = 0;
-	table->meal_eaten = 0;
 	table->forks = NULL;
 	table->philo = NULL;
 	*philo_head = NULL;
