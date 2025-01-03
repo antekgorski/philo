@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   tools.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: agorski <agorski@student.42.fr>            +#+  +:+       +#+        */
+/*   By: agorski <agorski@student.42warsaw.pl>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 21:15:07 by agorski           #+#    #+#             */
-/*   Updated: 2025/01/02 20:28:55 by agorski          ###   ########.fr       */
+/*   Updated: 2025/01/03 10:50:48 by agorski          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,16 @@ long	ft_get_time(void)
 
 	gettimeofday(&time, NULL);
 	return ((long)time.tv_sec * 1000 + (long)time.tv_usec / 1000);
+}
+
+/**
+ * @brief Get the time since the start of the program
+ * @param table the table
+ * @return long the time since the start of the program
+ */
+long	ft_ts(t_table *table)
+{
+	return (ft_get_time() - table->start_time);
 }
 
 /**

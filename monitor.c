@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   monitor.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: agorski <agorski@student.42.fr>            +#+  +:+       +#+        */
+/*   By: agorski <agorski@student.42warsaw.pl>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 10:13:45 by agorski           #+#    #+#             */
-/*   Updated: 2025/01/02 20:54:27 by agorski          ###   ########.fr       */
+/*   Updated: 2025/01/03 10:50:44 by agorski          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int	ft_philo_died(t_table *table, t_philo_head **philo_head)
 	{
 		if (((ft_get_time() - (*philo_head)[i].lm_time)) > table->time_to_die)
 		{
-			printf("%ld %d died\n", ft_get_time(), i + 1);
+			printf("%ld %d died\n", ft_ts(table), i + 1);
 			return (1);
 		}
 		i++;

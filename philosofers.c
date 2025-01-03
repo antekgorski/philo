@@ -6,7 +6,7 @@
 /*   By: agorski <agorski@student.42warsaw.pl>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/28 21:33:59 by agorski           #+#    #+#             */
-/*   Updated: 2025/01/03 00:58:03 by agorski          ###   ########.fr       */
+/*   Updated: 2025/01/03 10:41:36 by agorski          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,13 @@ void	*ft_philo(void *arg)
 	philo = (t_philo_head *)arg;
 	while (philo->table->philo_died != 1 && philo->table->meal_eaten != 1)
 	{
-			ft_take_forks(philo);
-			ft_eat(philo);
-			ft_drop_forks(philo);
-			ft_sleep(philo);
-			ft_think(philo);
+		// if (philo->table->philo_died == 1 || philo->table->meal_eaten == 1)
+		// 	break ;
+		ft_take_forks(philo);
+		ft_eat(philo);
+		ft_drop_forks(philo);
+		ft_sleep(philo);
+		ft_think(philo);
 	}
 	return (NULL);
 }

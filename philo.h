@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   philo.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: agorski <agorski@student.42.fr>            +#+  +:+       +#+        */
+/*   By: agorski <agorski@student.42warsaw.pl>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 19:36:56 by agorski           #+#    #+#             */
-/*   Updated: 2024/12/29 00:35:18 by agorski          ###   ########.fr       */
+/*   Updated: 2025/01/03 10:50:53 by agorski          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,5 +49,6 @@ void	ft_think(t_philo_head *philo);
 long	ft_get_time(void);
 void	e_q(char *str);
 void	ft_free(t_table *table, t_philo_head *philo_head);
+long	ft_ts(t_table *table);
 
 #endif
