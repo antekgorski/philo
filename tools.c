@@ -6,11 +6,23 @@
 /*   By: agorski <agorski@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 21:15:07 by agorski           #+#    #+#             */
-/*   Updated: 2025/01/03 21:44:10 by agorski          ###   ########.fr       */
+/*   Updated: 2025/01/04 18:09:48 by agorski          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
+
+void	duble_lock(pthread_mutex_t *mutex1, pthread_mutex_t *mutex2)
+{
+	pthread_mutex_lock(mutex1);
+	pthread_mutex_lock(mutex2);
+}
+
+void	duble_unlock(pthread_mutex_t *mutex1, pthread_mutex_t *mutex2)
+{
+	pthread_mutex_unlock(mutex1);
+	pthread_mutex_unlock(mutex2);
+}
 
 /**
  * @brief Print an error message and exit the program
@@ -26,7 +38,7 @@ void	e_q(char *str)
  * @brief Check if all the philosophers have eaten the required number of meals
  * @param table the table
  * @param philo_head the philosophers
- * @return int 1 if all the philosophers have eaten the required number of meals,
+ * @return int 1 if all the philosophers have eaten the required number of meals
  * @return 0 otherwise
  */
 bool	ft_full(t_philo_head *philo)

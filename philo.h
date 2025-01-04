@@ -6,7 +6,7 @@
 /*   By: agorski <agorski@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 19:36:56 by agorski           #+#    #+#             */
-/*   Updated: 2025/01/04 14:44:59 by agorski          ###   ########.fr       */
+/*   Updated: 2025/01/04 18:07:07 by agorski          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,14 +39,13 @@ void	ft_init_struct(t_table *table, t_philo_head **philo_head);
 
 // philo_needs
 
-void	ft_take_forks(t_philo_head *philo);
-void	ft_drop_forks(t_philo_head *philo);
 void	ft_eat(t_philo_head *philo);
 void	ft_sleep(t_philo_head *philo);
 void	ft_think(t_philo_head *philo);
-void	eat_odd(t_philo_head *philo);
-void	eat_even(t_philo_head *philo);
-void	even_unlock(t_philo_head *philo);
+bool	eat_odd(t_philo_head *philo);
+bool	eat_even(t_philo_head *philo);
+void	duble_lock(pthread_mutex_t *mutex1, pthread_mutex_t *mutex2);
+void	duble_unlock(pthread_mutex_t *mutex1, pthread_mutex_t *mutex2);
 
 // tools
 

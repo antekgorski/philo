@@ -6,12 +6,12 @@
 #    By: agorski <agorski@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/27 22:51:40 by agorski           #+#    #+#              #
-#    Updated: 2025/01/04 14:41:46 by agorski          ###   ########.fr        #
+#    Updated: 2025/01/04 18:08:25 by agorski          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = philo
-SRCS = check_imput.c main.c init.c philo_needs.c philosofers.c time_tools.c tools.c waiter.c eat_case.c
+SRCS = check_imput.c eat_case.c init.c main.c philo_needs.c philosofers.c time_tools.c tools.c waiter.c
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror #-I.
 TESTFLAGS = -g -pthread #-fsanitize=thread #-fsanitize=address
