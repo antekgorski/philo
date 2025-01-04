@@ -6,7 +6,7 @@
 /*   By: agorski <agorski@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 19:36:56 by agorski           #+#    #+#             */
-/*   Updated: 2025/01/03 21:39:59 by agorski          ###   ########.fr       */
+/*   Updated: 2025/01/04 14:44:59 by agorski          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,9 @@ void	ft_drop_forks(t_philo_head *philo);
 void	ft_eat(t_philo_head *philo);
 void	ft_sleep(t_philo_head *philo);
 void	ft_think(t_philo_head *philo);
+void	eat_odd(t_philo_head *philo);
+void	eat_even(t_philo_head *philo);
+void	even_unlock(t_philo_head *philo);
 
 // tools
 
