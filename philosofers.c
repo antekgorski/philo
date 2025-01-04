@@ -6,7 +6,7 @@
 /*   By: agorski <agorski@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/28 21:33:59 by agorski           #+#    #+#             */
-/*   Updated: 2025/01/03 21:33:31 by agorski          ###   ########.fr       */
+/*   Updated: 2025/01/04 12:16:09 by agorski          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ void	*ft_philo(void *arg)
 	t_philo_head	*philo;
 
 	philo = (t_philo_head *)arg;
+	if (philo->id % 2 != 0)
+		usleep(15);
 	while (!is_end(philo->table) && !is_full(philo))
 	{
 		ft_eat(philo);
